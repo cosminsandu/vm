@@ -1,0 +1,43 @@
+---
+ip: "192.168.10.12"
+memory: 2048
+cpus: 2
+provider: virtualbox
+
+#authorize: ~/.ssh/id_rsa.pub
+#
+#keys:
+#    - ~/.ssh/id_rsa
+
+##default password is `vagrant`
+
+folders:
+    - map: D:\code\project1
+      to: /home/vagrant/code/project1
+    - map: D:\code\symfony5
+      to: /home/vagrant/symfony5
+#Windows users should not use the ~/ path syntax and instead should use the full path to their project
+#You should always map individual projects to their own folder mapping instead of mapping your entire ~/code folder.
+
+sites:
+    - map: homestead.test
+      to: /home/vagrant/code/project1/public
+    - map: symfony5.test
+      to: /home/vagrant/symfony5/public
+      type: symfony4
+# If you change the sites property after provisioning the Homestead box, you should re-run `vagrant reload --provision`
+
+databases:
+    - homestead
+
+features:
+    - mariadb: false
+    - ohmyzsh: false
+    - webdriver: false
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
