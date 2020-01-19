@@ -7,6 +7,7 @@ It uses [Laravel Homestead](https://laravel.com/docs/6.x/homestead).
 # Requirements
  - hardware virtualization (VT-x) 
  - vagrant
+ - git
  - VirtualBox
 
 ## Initialization
